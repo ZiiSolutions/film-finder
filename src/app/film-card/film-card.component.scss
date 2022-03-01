@@ -1,0 +1,18 @@
+@import "media-queries";
+@import "colors";
+@import "fonts";
+
+.figure-container {
+  margin: 0;
+  img {
+    height: 400px;
+    width: 270px;
+  }
+
+  figcaption {
+    @extend .card-caption-fonts;
+    display: flex;
+    flex-direction: column;
+    color: $white;
+  }
+}

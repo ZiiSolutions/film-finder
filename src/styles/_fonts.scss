@@ -1,0 +1,26 @@
+@import "media-queries";
+@import "colors";
+
+// Note: typically fonts should be responsive for better UX. The figma designs didn't include mobile designs or fonts.
+// I would usually bring this up with designer so we can work out what are the fonts for smaller resolution devices.
+// Then use breakpoints in the classes below to display different fonts. However, I will leave this out in this test as the spec
+// is not complete.
+
+.base-font-configuration {
+  font-family: Roboto, sans-serif;
+  color: $white;
+}
+
+.card-caption-fonts {
+  @extend .base-font-configuration;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.search-text-fonts {
+  @extend .base-font-configuration;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}

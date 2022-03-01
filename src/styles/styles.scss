@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Preserves useful defaults and normalise styles for wide range of elements. Improving cross browser consistency.
+@import "~normalize.css";
+
+// Mixins & common css
+@import "media-queries";
+@import "colors";
+
+html,
+body {
+  height: 100%;
+  background-color: $dark-grey;
+  margin: 0;
+}

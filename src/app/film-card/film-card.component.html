@@ -1,0 +1,6 @@
+<figure class="figure-container">
+  <img [src]="item.Poster" [alt]="item.Title" />
+  <figcaption *ngIf="displayTitle">
+    {{ item.Title }} <span>{{ item.Year }}</span>
+  </figcaption>
+</figure>

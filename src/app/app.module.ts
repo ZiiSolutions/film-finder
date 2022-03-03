@@ -6,9 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FilmContentComponent } from './film-content/film-content.component';
 import { FilmCardComponent } from './film-card/film-card.component';
+import { FilmHeaderComponent } from './film-header/film-header.component';
 
 @NgModule({
-  declarations: [AppComponent, FilmContentComponent, FilmCardComponent],
+  declarations: [
+    AppComponent,
+    FilmContentComponent,
+    FilmCardComponent,
+    FilmHeaderComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

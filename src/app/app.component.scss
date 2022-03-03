@@ -1,1 +1,11 @@
+@import "media-queries";
 
+:host {
+  display: block;
+  padding: 60px 14px 40px 14px;
+
+  @include respond-above(sm) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

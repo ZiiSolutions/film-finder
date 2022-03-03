@@ -1,0 +1,69 @@
+@import "media-queries";
+@import "colors";
+@import "fonts";
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1140px;
+  padding: 0;
+
+  @include respond-above(lg) {
+    justify-content: space-between;
+    flex-direction: row;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .logo {
+    margin-bottom: 25px;
+  }
+
+  .search-container {
+    position: relative;
+    width: 100%;
+    max-width: 503px;
+  }
+
+  .search-box {
+    @extend .search-text-fonts;
+    height: 50px;
+    width: 100%;
+    border: 2px solid $white;
+    padding-left: 15px;
+    background-color: transparent;
+  }
+
+  // Magnifying glass within
+  .search-button {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    height: 26px;
+    width: 24px;
+    border: none;
+    background: transparent url(/assets/search-icon.svg) no-repeat;
+  }
+}
+
+// Take care of placeholder text styling
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Firefox */
+  color: $white;
+  opacity: 1;
+}
+
+:-ms-input-placeholder,
+::-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $white;
+}

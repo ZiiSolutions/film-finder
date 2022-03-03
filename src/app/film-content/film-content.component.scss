@@ -2,6 +2,7 @@
 @import "colors";
 @import "fonts";
 
+// Used for common styling of navigation buttons
 @mixin navigation-button-style($src) {
   width: 44px;
   height: 44px;
@@ -12,7 +13,6 @@
 :host {
   display: flex;
   justify-content: center;
-  padding: 20px 16px;
 
   @include respond-above(sm) {
     padding: 0;
@@ -24,7 +24,7 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 13px;
-  
+
   @include respond-above(sm) {
     justify-content: space-between;
   }
@@ -53,10 +53,10 @@
   width: 100%;
   background-color: $light-grey;
   padding: 20px 18px;
+  margin-top: 42px;
 
   @include respond-above(xs) {
     width: fit-content;
-    margin: 42px 40px 40px 40px;
   }
 
   ul {
@@ -85,11 +85,14 @@
 
     li {
       width: fit-content;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
 
       @include respond-above(sm) {
         margin-bottom: 0;
       }
+    }
+    li:last-child {
+      margin-bottom: 0;
     }
   }
 }

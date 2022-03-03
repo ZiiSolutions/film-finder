@@ -1,4 +1,5 @@
 <section class="content-container">
+  <!-- Display search results & pagination buttons -->
   <div class="search-result-container">
     <p>200 Results found</p>
 
@@ -9,6 +10,7 @@
     </div>
   </div>
 
+  <!-- Display list of image cards based on search -->
   <ul *ngIf="searchList$ | async as items">
     <li *ngFor="let item of items.Search; let i = index">
       <app-film-card

@@ -1,0 +1,13 @@
+<button class="modal-close-button" (click)="closeModel()"></button>
+<img [src]="item.Poster" [alt]="item.Title" />
+
+<section class="model-detail-container">
+  <h1 class="modal-heading">
+    {{ item.Title }} <span> ({{ item.Year }})</span>
+  </h1>
+
+  <p class="modal-meta-text"><span>Director:</span> {{ item.Director }}</p>
+  <p class="modal-meta-text"><span>Cast:</span> {{ item.Actors }}</p>
+  <p class="modal-meta-text"><span>Genre:</span> {{ item.Genre }}</p>
+  <p class="modal-body-text">{{ item.Plot }}</p>
+</section>

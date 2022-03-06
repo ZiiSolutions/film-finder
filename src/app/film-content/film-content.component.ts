@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FilmSearchList } from '../app-interfaces';
 import { FilmApiService } from '../film-api.service';
@@ -8,7 +8,7 @@ import { FilmApiService } from '../film-api.service';
   templateUrl: './film-content.component.html',
   styleUrls: ['./film-content.component.scss'],
 })
-export class FilmContentComponent implements OnInit {
+export class FilmContentComponent {
   @HostListener('window:resize')
   onResize() {
     this.screenSize = window.innerWidth;
@@ -30,6 +30,4 @@ export class FilmContentComponent implements OnInit {
     // Should only diplay title for first row of cards
     return cardIndex < 4;
   }
-
-  ngOnInit(): void {}
 }

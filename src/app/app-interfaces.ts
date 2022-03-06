@@ -9,7 +9,7 @@ export interface ApiSearchQueryParams {
 
 export interface ApiItemQueryParams {
   i: string;
-  plot: Plot;
+  plot?: Plot;
 }
 
 export interface FilmSearchList {
@@ -22,5 +22,15 @@ export interface FilmSearchListItem {
   Year: string;
   imdbID: string;
   Type: string;
+  Poster: string;
+}
+
+export interface FilmDetail {
+  Title: string;
+  Year: string;
+  Genre: string;
+  Director: string;
+  Actors: string;
+  Plot: string;
   Poster: string;
 }

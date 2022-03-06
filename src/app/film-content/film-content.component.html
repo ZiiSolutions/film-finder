@@ -1,22 +1,32 @@
 <section class="content-container" *ngIf="searchList$ | async as items">
   <!-- Display search results & pagination buttons -->
-  <div class="search-result-container">
-    <p>{{ items.totalResults }} Results found</p>
+  <ng-template
+    [ngIf]="items.Search && items.Search.length"
+    [ngIfElse]="noResults"
+  >
+    <div class="search-result-container">
+      <p class="total-results">{{ items.totalResults }} Results found</p>
 
-    <div class="search-pagination-container">
-      <p>Page {{ items.page }} of {{ items.totalPages }}</p>
-      <button class="back-arrow" (click)="previousPage()"></button>
-      <button class="forward-arrow" (click)="nextPage()"></button>
+      <div class="search-pagination-container">
+        <p>Page {{ items.page }} of {{ items.totalPages }}</p>
+        <button class="back-arrow" (click)="previousPage()"></button>
+        <button class="forward-arrow" (click)="nextPage()"></button>
+      </div>
     </div>
-  </div>
 
-  <!-- Display list of image cards based on search -->
-  <ul>
-    <li *ngFor="let item of items.Search; let i = index">
-      <app-film-card
-        [item]="item"
-        [displayTitle]="displayCardTitle(i)"
-      ></app-film-card>
-    </li>
-  </ul>
+    <!-- Display list of image cards based on search -->
+    <ul>
+      <li *ngFor="let item of items.Search; let i = index">
+        <app-film-card
+          [item]="item"
+          [displayTitle]="displayCardTitle(i)"
+        ></app-film-card>
+      </li>
+    </ul>
+  </ng-template>
+
+  <!-- Display message when no results found for given search -->
+  <ng-template #noResults>
+    <p class="no-results">No results found</p>
+  </ng-template>
 </section>

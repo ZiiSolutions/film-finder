@@ -96,7 +96,7 @@ export class FilmApiService {
     // In a real world application I wouldn't take this approach. Instead it would be good idea to setup
     // a proxy API which can take care of page sizing logic.
     // Wouldn't recommend putting that kind of logic in the UI.
-    if (searchList && searchList.Search.length > 8) {
+    if (searchList && searchList.Search && searchList.Search.length > 8) {
       searchList.Search.length = 8;
     }
 

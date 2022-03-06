@@ -15,6 +15,8 @@ export interface ApiItemQueryParams {
 export interface FilmSearchList {
   Search: FilmSearchListItem[];
   totalResults: number;
+  totalPages: number;
+  page: number;
 }
 
 export interface FilmSearchListItem {

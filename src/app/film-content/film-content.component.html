@@ -1,17 +1,17 @@
-<section class="content-container">
+<section class="content-container" *ngIf="searchList$ | async as items">
   <!-- Display search results & pagination buttons -->
   <div class="search-result-container">
-    <p>200 Results found</p>
+    <p>{{ items.totalResults }} Results found</p>
 
     <div class="search-pagination-container">
-      <p>Page 1 of 9</p>
-      <button class="back-arrow"></button>
-      <button class="forward-arrow"></button>
+      <p>Page {{ items.page }} of {{ items.totalPages }}</p>
+      <button class="back-arrow" (click)="previousPage()"></button>
+      <button class="forward-arrow" (click)="nextPage()"></button>
     </div>
   </div>
 
   <!-- Display list of image cards based on search -->
-  <ul *ngIf="searchList$ | async as items">
+  <ul>
     <li *ngFor="let item of items.Search; let i = index">
       <app-film-card
         [item]="item"

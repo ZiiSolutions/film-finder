@@ -1,8 +1,13 @@
 <header>
   <img class="logo" src="/assets/logo.svg" />
 
-  <div class="search-container">
-    <input class="search-box" placeholder="Search..." type="search" />
-    <button class="search-button"></button>
-  </div>
+  <form class="search-container" [formGroup]="form" (submit)="onSubmit()">
+    <input
+      class="search-box"
+      placeholder="Search..."
+      type="text"
+      formControlName="search"
+    />
+    <button class="search-button" type="submit"></button>
+  </form>
 </header>

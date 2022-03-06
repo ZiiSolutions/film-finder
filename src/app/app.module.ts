@@ -9,6 +9,7 @@ import { FilmCardComponent } from './film-card/film-card.component';
 import { FilmHeaderComponent } from './film-header/film-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilmModalComponent } from './film-modal/film-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,13 @@ import { FilmModalComponent } from './film-modal/film-modal.component';
     FilmHeaderComponent,
     FilmModalComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

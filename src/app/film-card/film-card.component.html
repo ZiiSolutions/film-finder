@@ -1,4 +1,4 @@
-<figure class="figure-container">
+<figure class="figure-container" (click)="openModal()">
   <img [src]="item.Poster" [alt]="item.Title" />
   <figcaption *ngIf="displayTitle">
     {{ item.Title }} <span>{{ item.Year }}</span>

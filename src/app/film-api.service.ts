@@ -2,7 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { AppConfigService } from './app-config.service';
-import { ApiSearchQueryParams, FilmSearchList } from './app-interfaces';
+import {
+  ApiItemQueryParams,
+  ApiSearchQueryParams,
+  FilmDetail,
+  FilmSearchList,
+} from './app-interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -30,6 +35,17 @@ export class FilmApiService {
 
   fetchInitialPage(): void {
     this.fetchSearchItems({ s: 'action' });
+  }
+
+  fetchItem(searchParams: ApiItemQueryParams): Observable<FilmDetail> {
+    const params = new URLSearchParams({
+      apikey: this.appConfig.apiKey,
+      i: searchParams.i,
+    });
+
+    return this.httpClient.get<FilmDetail>(
+      `${this.appConfig.apiBaseUrl}?${params}`
+    );
   }
 
   get items$(): Observable<FilmSearchList> {

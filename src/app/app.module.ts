@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { FilmContentComponent } from './film-content/film-content.component';
 import { FilmCardComponent } from './film-card/film-card.component';
 import { FilmHeaderComponent } from './film-header/film-header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FilmModalComponent } from './film-modal/film-modal.component';
 
 @NgModule({
   declarations: [
@@ -14,8 +16,9 @@ import { FilmHeaderComponent } from './film-header/film-header.component';
     FilmContentComponent,
     FilmCardComponent,
     FilmHeaderComponent,
+    FilmModalComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })

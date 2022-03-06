@@ -1,0 +1,79 @@
+@import "media-queries";
+@import "colors";
+@import "fonts";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $light-grey;
+  border-radius: 5px;
+  max-width: 919px;
+  padding: 20px 13px;
+
+  @include respond-above(md) {
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 39px 20px 39px 42px;
+  }
+}
+
+.modal-close-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  background: transparent url("/assets/close-icon.svg") center center no-repeat;
+  border: none;
+  outline: none;
+}
+
+img {
+  height: 380px;
+  width: 266px;
+}
+
+.model-detail-container {
+  margin-top: 14px;
+
+  @include respond-above(md) {
+    margin-left: 38px;
+    margin-top: 0;
+  }
+
+  .modal-heading {
+    // Note for some reason it was difficult to make out the heading font sizing
+    // and configuration from Figma. Maybe an issue with the designs or my local
+    // machine. But this is my attempt at making sense of it.
+    @extend .modal-heading-fonts;
+    margin-bottom: 30px;
+  }
+
+  .modal-meta-text {
+    @extend .modal-description-fonts;
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .modal-body-text {
+    @extend .modal-body-fonts;
+    margin-top: 30px;
+
+    span {
+      font-weight: 400px;
+    }
+  }
+}
+
+// Can do this in multiple ways. Another approach is to provide the class as options in ts.
+// But this seems quite straight forward for this test.
+::ng-deep .modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}

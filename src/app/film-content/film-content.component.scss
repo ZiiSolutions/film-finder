@@ -96,3 +96,9 @@
     }
   }
 }
+
+.no-results {
+  @extend .search-text-fonts;
+  margin: 0;
+  text-align: center;
+}

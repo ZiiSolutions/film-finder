@@ -23,7 +23,6 @@ export class FilmCardComponent {
       const modalRef = this.modalService.open(FilmModalComponent, {
         size: 'xl',
         centered: true,
-        // scrollable: true,
       });
       modalRef.componentInstance.item = item;
     });

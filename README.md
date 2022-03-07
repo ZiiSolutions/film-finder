@@ -13,3 +13,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` or `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running ESLint
+
+Run `ng lint` or `npm run lint` to execute linting.

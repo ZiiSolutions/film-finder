@@ -3,8 +3,7 @@ import { FilmApiService } from '../film-api.service';
 import { Mock } from 'ts-mocks';
 
 import { FilmContentComponent } from './film-content.component';
-import { of, Subject } from 'rxjs';
-import { FilmSearchList } from '../app-interfaces';
+import { of } from 'rxjs';
 import {
   getElementByCss,
   getElementsByCss,

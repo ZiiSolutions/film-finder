@@ -6,7 +6,6 @@ import { FilmDetail, FilmSearchListItem } from '../app-interfaces';
 /*
  *Helper functions for common unit testing operations.
  */
-
 export const getElementByCss = (fixture: ComponentFixture<any>, css: string) =>
   getElementByCssDebugElement(fixture.debugElement, css);
 
